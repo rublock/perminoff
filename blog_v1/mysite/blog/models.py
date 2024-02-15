@@ -3,6 +3,11 @@ from django.db import models
 from django.utils import timezone
 
 
+class PublishedManager(models.Manager):
+    """конкретно-прикладной менеджер"""
+    def get_queryset(self):
+        return super().get_queryset().filter(status=Post.Status.PUBLISHED)
+
 class Post(models.Model):
     """модель, которая позволит хранить посты блога в базе данных"""
 
@@ -18,6 +23,9 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.DRAFT)
+
+    objects = models.Manager() # менеджер, применяемый по умолчанию
+    published = PublishedManager() # конкретно-прикладной менеджер
 
     class Meta:
         ordering = ["-publish"]
