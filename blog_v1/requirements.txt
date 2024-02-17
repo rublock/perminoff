@@ -10,3 +10,4 @@ platformdirs==4.2.0
 sqlparse==0.4.4
 tomli==2.0.1
 typing_extensions==4.9.0
+mimesis~=14.0.0
