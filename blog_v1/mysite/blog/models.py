@@ -12,7 +12,7 @@ class PublishedManager(models.Manager):
 
 
 class Post(models.Model):
-    """модель, которая позволит хранить посты блога в базе данных"""
+    """модель хранения постов блога в базе данных"""
 
     class Status(models.TextChoices):
         DRAFT = "DF", "Draft"
@@ -52,4 +52,4 @@ class Post(models.Model):
         )
 
     def __str__(self):
-        return self.id, self.title
+        return self.title
