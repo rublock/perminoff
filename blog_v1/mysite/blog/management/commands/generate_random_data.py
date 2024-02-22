@@ -1,15 +1,13 @@
 import time
 
-from blog.models import (
-    Post,
-)  # Replace "myapp" with the actual name of your application
+from blog.models import Post
 from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand
 from mimesis import Generic
 
 
 class Command(BaseCommand):
-    """автоматически созадет посты"""
+    """Скрипт автоматического созадания постов"""
 
     generic = Generic("ru")
 

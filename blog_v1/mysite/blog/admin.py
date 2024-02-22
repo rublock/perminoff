@@ -1,11 +1,12 @@
 from django.contrib import admin
 
-from .models import Post
+from .models import Comment, Post
 
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     """
+    Посты, административный раздел
     list_display - отображаемые на странице
     list_filter - позволяет фильтровать результаты по полям
     search_fields - строка поиска
@@ -22,3 +23,12 @@ class PostAdmin(admin.ModelAdmin):
     raw_id_fields = ["author"]
     date_hierarchy = "publish"
     ordering = ["status", "publish"]
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    """Комментарии к статьям, административный раздел"""
+
+    list_display = ["name", "email", "post", "created", "active"]
+    list_filter = ["active", "created", "updated"]
+    search_fields = ["name", "email", "body"]
