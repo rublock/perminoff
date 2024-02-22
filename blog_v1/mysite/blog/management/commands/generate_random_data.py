@@ -1,12 +1,11 @@
 import time
 
-from django.contrib.auth.models import User
-from django.core.management.base import BaseCommand
-from mimesis import Generic
-
 from blog.models import (
     Post,
 )  # Replace "myapp" with the actual name of your application
+from django.contrib.auth.models import User
+from django.core.management.base import BaseCommand
+from mimesis import Generic
 
 
 class Command(BaseCommand):
