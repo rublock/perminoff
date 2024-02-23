@@ -1,11 +1,12 @@
 import random
 import time
 
-from blog.models import Post
 from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand
 from mimesis import Generic
 from taggit.models import Tag
+
+from ...models import Post
 
 
 class Command(BaseCommand):
