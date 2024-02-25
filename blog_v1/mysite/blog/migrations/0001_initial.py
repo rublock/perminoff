@@ -30,7 +30,10 @@ class Migration(migrations.Migration):
                 ("title", models.CharField(max_length=250)),
                 ("slug", models.SlugField(max_length=250, unique=True)),
                 ("body", models.TextField()),
-                ("publish", models.DateTimeField(default=django.utils.timezone.now)),
+                (
+                    "publish",
+                    models.DateTimeField(default=django.utils.timezone.now),
+                ),
                 ("created", models.DateTimeField(auto_now_add=True)),
                 ("updated", models.DateTimeField(auto_now=True)),
                 (
@@ -52,7 +55,12 @@ class Migration(migrations.Migration):
             ],
             options={
                 "ordering": ["-publish"],
-                "indexes": [models.Index(fields=["-publish"], name="blog_post_publish_bb7600_idx")],
+                "indexes": [
+                    models.Index(
+                        fields=["-publish"],
+                        name="blog_post_publish_bb7600_idx",
+                    )
+                ],
             },
         ),
     ]
