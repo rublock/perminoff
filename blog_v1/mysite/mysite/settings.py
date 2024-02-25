@@ -25,6 +25,8 @@ INSTALLED_APPS = [
     "crispy_bootstrap4",
     "taggit",
     "blog",
+    "django.contrib.sites",
+    "django.contrib.sitemaps",
 ]
 
 MIDDLEWARE = [
@@ -100,3 +102,5 @@ EMAIL_PORT = os.environ.get("EMAIL_PORT")
 EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS")
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+SITE_ID = 1

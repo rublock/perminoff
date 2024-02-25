@@ -13,6 +13,7 @@
 </head>
 <body><br>
 <a href="{% url 'blog:post_list' %}">Home</a>
+<a href="{% url 'django.contrib.sitemaps.views.sitemap' %}">Site map</a>
 <a href="{% url 'admin:index' %}">Admin</a>
 <div id="content">
     {% block content %}
