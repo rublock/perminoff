@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "blog",
     "django.contrib.sites",
     "django.contrib.sitemaps",
+    "accounts",
 ]
 
 MIDDLEWARE = [
@@ -104,3 +105,6 @@ EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS")
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 SITE_ID = 1
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
