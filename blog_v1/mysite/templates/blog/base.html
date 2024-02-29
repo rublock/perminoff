@@ -17,9 +17,18 @@
 <a href="{% url 'admin:index' %}">Admin</a><span style="visibility: hidden;">***</span>
 <a href="{% url 'blog:log_view' %}">Log</a><span style="visibility: hidden;">***</span>
 <div id="content">
+
+    {% if messages %}
+        {% for message in messages %}
+            {{ message.tags }} {{ message }}
+        {% endfor %}
+    {% endif %}
+
     {% block content %}
     {% endblock %}
+
 </div>
+
 <div id="sidebar">
     <h2>My blog</h2>
 

@@ -107,7 +107,6 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = "/"
 
 LOG_FILE = BASE_DIR / "logs.log"
 
@@ -134,3 +133,5 @@ LOGGING = {
         },
     },
 }
+
+SESSION_COOKIE_AGE = 2592000 #30 days
