@@ -5,6 +5,7 @@ from django.db.models import Count
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
 from taggit.models import Tag
+from django.views.generic import TemplateView
 
 from .forms import CommentForm, EmailPostForm
 from .models import Post
@@ -112,3 +113,18 @@ def post_comment(request, post_id):
         "blog/post/comment.html",
         {"post": post, "form": form, "comment": comment},
     )
+
+
+class LogView(TemplateView):
+    template_name = "blog/log_view.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(LogView, self).get_context_data(**kwargs)
+        log_slice = []
+        with open(settings.LOG_FILE, "r") as log_file:
+            for i, line in enumerate(log_file):
+                if i == 1000:  # first 1000 lines
+                    break
+                log_slice.append(line)
+            context["log"] = "".join(log_slice)
+        return context
