@@ -25,20 +25,20 @@
             <div>
                 <div>
                     <div>
-                        <label>Username:</label>
-                        {{ user_form.username|crispy }}
+
+                        {{ user_form.username|as_crispy_field }}
                         <hr>
-                        <label>Email:</label>
-                        {{ user_form.email }}
+
+                        {{ user_form.email|as_crispy_field }}
                     </div>
                     <hr>
-                    <div><a href="#">Change Password</a>
+                    <a href="{% url 'accounts:change_password' %}">Change Password</a>
                         <hr>
-                        <label>Change Avatar:</label>
-                        {{ profile_form.avatar }}
+
+                        {{ profile_form.avatar|as_crispy_field }}
                     </div>
                     <hr>
-                    <label>Bio:</label> {{ profile_form.bio }}
+                    {{ profile_form.bio|as_crispy_field }}
                 </div>
             </div>
             <br><br>
