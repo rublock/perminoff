@@ -21,15 +21,20 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ["name", "email", "body"]
 
+
 class LoginForm(AuthenticationForm):
-    username = forms.CharField(max_length=100,
-                               required=True,
-                               widget=forms.TextInput(attrs={'placeholder': 'Username'}))
-    password = forms.CharField(max_length=50,
-                               required=True,
-                               widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+    username = forms.CharField(
+        max_length=100,
+        required=True,
+        widget=forms.TextInput(attrs={"placeholder": "Username"}),
+    )
+    password = forms.CharField(
+        max_length=50,
+        required=True,
+        widget=forms.PasswordInput(attrs={"placeholder": "Password"}),
+    )
     remember_me = forms.BooleanField(required=False)
 
     class Meta:
         model = User
-        fields = ['username', 'password', 'remember_me']
+        fields = ["username", "password", "remember_me"]

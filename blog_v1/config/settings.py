@@ -92,6 +92,9 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
@@ -114,7 +117,9 @@ LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
     "formatters": {
-        "console": {"format": "[%(asctime)s] %(levelname)s %(name)s (%(lineno)d) %(message)s"},
+        "console": {
+            "format": "[%(asctime)s] %(levelname)s %(name)s (%(lineno)d) %(message)s"
+        },
     },
     "handlers": {
         "file": {
@@ -134,4 +139,4 @@ LOGGING = {
     },
 }
 
-SESSION_COOKIE_AGE = 2592000 #30 days
+SESSION_COOKIE_AGE = 2592000  # 30 days

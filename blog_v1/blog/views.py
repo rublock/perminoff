@@ -4,8 +4,8 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db.models import Count
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
-from taggit.models import Tag
 from django.views.generic import TemplateView
+from taggit.models import Tag
 
 from .forms import CommentForm, EmailPostForm
 from .models import Post
@@ -99,14 +99,10 @@ def post_comment(request, post_id):
     """Отправка комментария к посту"""
     post = get_object_or_404(Post, id=post_id, status=Post.Status.PUBLISHED)
     comment = None
-    # Комментарий был отправлен
     form = CommentForm(data=request.POST)
     if form.is_valid():
-        # Создать объект класса Comment, не сохраняя его в базе данных
         comment = form.save(commit=False)
-        # Назначить пост комментарию
         comment.post = post
-        # Сохранить комментарий в базе данных
         comment.save()
     return render(
         request,
