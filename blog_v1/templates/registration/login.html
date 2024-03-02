@@ -10,5 +10,6 @@
         {% csrf_token %}
         <p><input type="submit" value="Login"></p>
     </form>
+    <a href="{% url 'social:begin' 'google-oauth2' %}">Log In with Google</a>
     <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
 {% endblock %}
