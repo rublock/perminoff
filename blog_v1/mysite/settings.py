@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "django.contrib.sitemaps",
     "accounts",
     'social_django',
+    'django_bootstrap5'
 ]
 
 MIDDLEWARE = [
@@ -73,7 +74,6 @@ DATABASES = {
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.mailru.MRGOAuth2',
     'social_core.backends.google.GoogleOAuth2',
-
     'django.contrib.auth.backends.ModelBackend',
 )
 
