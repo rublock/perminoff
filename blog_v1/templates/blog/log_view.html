@@ -1,0 +1,8 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<h1><a href="{% url 'blog:post_list' %}">My Blog</a></h1>
+<p>
+    <div class="text-center text-muted"><small>First 1000 lines of log file</small></div>
+    <pre>{{ log }}</pre>
+</p>
+{% endblock content %}
