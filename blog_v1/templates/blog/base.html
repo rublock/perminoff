@@ -23,6 +23,7 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'accounts:users-profile' %}"><img
                             class="rounded-circle" width="30" src="{{ user.profile.avatar.url }}"/> {{ user.username }}
                     </a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'post_list' %}">API</a></li>
                     <li class="nav-item">
                         <form action="{% url 'logout' %}" method="post">{% csrf_token %}
                             <a href="#" class="nav-link" onclick="parentNode.submit();">Log Out</a>
@@ -100,7 +101,8 @@
 </div>
 <!-- Footer-->
 <footer class="py-5 bg-dark mt-2 mt-auto">
-    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; blog_v1, made by <a href="https://github.com/rublock">ruBlock</a></p></div>
+    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; blog_v1, made by
+        <a href="https://github.com/rublock">ruBlock</a></p></div>
 </footer>
 </body>
 </html>
