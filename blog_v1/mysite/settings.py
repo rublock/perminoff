@@ -29,7 +29,9 @@ INSTALLED_APPS = [
     "django.contrib.sitemaps",
     "accounts",
     'social_django',
-    'django_bootstrap5'
+    'django_bootstrap5',
+    'rest_framework',
+    'blog_api',
 ]
 
 MIDDLEWARE = [
@@ -156,3 +158,9 @@ LOGGING = {
 }
 
 SESSION_COOKIE_AGE = 2592000  # 30 days
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.AllowAny",
+    ],
+}
