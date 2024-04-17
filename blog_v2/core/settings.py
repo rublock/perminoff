@@ -18,7 +18,22 @@ INSTALLED_APPS = [
     'apps.blog.apps.BlogConfig',
     'mptt',
     'django_mptt_admin',
+    "debug_toolbar",
 ]
+
+if DEBUG:
+    INTERNAL_IPS = [
+        "192.168.1.4",
+        "127.0.0.1",
+    ]
+
+    def show_toolbar(request):
+        return True
+
+
+    DEBUG_TOOLBAR_CONFIG = {
+        "SHOW_TOOLBAR_CALLBACK": show_toolbar,
+    }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -28,6 +43,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'core.urls'
