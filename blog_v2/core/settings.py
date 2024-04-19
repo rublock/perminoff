@@ -22,6 +22,8 @@ INSTALLED_APPS = [
     'apps.accounts',
     'taggit',
     'django_recaptcha',
+    'ckeditor_uploader',
+    'ckeditor',
 ]
 
 if DEBUG:
@@ -110,3 +112,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 RECAPTCHA_PUBLIC_KEY = '6Ldvh8ApAAAAADq9w0dT9jDoMiEpnTdsCQk4IEyy'
 RECAPTCHA_PRIVATE_KEY = '6Ldvh8ApAAAAAJAHQH0C8e15qfPGWUlm4N0S8xUY'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_CONFIGS = {
+    'awesome_ckeditor': {
+        'toolbar': 'full',
+        'height': 300,
+    },
+}
