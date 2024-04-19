@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     'apps.accounts',
     'taggit',
+    'django_recaptcha',
 ]
 
 if DEBUG:
@@ -106,3 +107,6 @@ MEDIA_ROOT = (BASE_DIR / 'media')
 MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+RECAPTCHA_PUBLIC_KEY = '6Ldvh8ApAAAAADq9w0dT9jDoMiEpnTdsCQk4IEyy'
+RECAPTCHA_PRIVATE_KEY = '6Ldvh8ApAAAAAJAHQH0C8e15qfPGWUlm4N0S8xUY'
