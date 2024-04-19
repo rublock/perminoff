@@ -29,7 +29,10 @@ INSTALLED_APPS = [
     "django.contrib.sitemaps",
     "accounts",
     'social_django',
-    'django_bootstrap5'
+    'django_bootstrap5',
+    'rest_framework',
+    'blog_api',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -156,3 +159,16 @@ LOGGING = {
 }
 
 SESSION_COOKIE_AGE = 2592000  # 30 days
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Blog API Project",
+    "DESCRIPTION": "A sample blog to learn about DRF",
+    "VERSION": "1.0.0",
+}
